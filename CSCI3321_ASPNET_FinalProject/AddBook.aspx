@@ -20,8 +20,7 @@
 		<div class="col-md-9">
 		    <asp:DropDownList ID="ddlAuthor" runat="server" DataSourceID="sqlAuthors" DataTextField="FullName" DataValueField="AuthorID">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="sqlAuthors" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" ProviderName="<%$ ConnectionStrings:DBConnectionString.ProviderName %>" SelectCommand="SELECT AuthorID FROM Authors
-SELECT FirstName + ' ' + LastName AS FullName From AUTHORS"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="sqlAuthors" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" ProviderName="<%$ ConnectionStrings:DBConnectionString.ProviderName %>" SelectCommand="SELECT AuthorID, FirstName + ' ' + LastName AS FullName FROM Authors"></asp:SqlDataSource>
 		</div>
 
 		<div class="col-md-3">
@@ -54,6 +53,10 @@ SELECT FirstName + ' ' + LastName AS FullName From AUTHORS"></asp:SqlDataSource>
 		    <asp:DropDownList ID="ddlGenres" runat="server" DataSourceID="sqlGenres" DataTextField="GenreName" DataValueField="GenreID">
             </asp:DropDownList>
             <asp:SqlDataSource ID="sqlGenres" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" ProviderName="<%$ ConnectionStrings:DBConnectionString.ProviderName %>" SelectCommand="SELECT Genres.* FROM Genres"></asp:SqlDataSource>
+		</div>
+
+		<div class="col-md-12">
+			<asp:Button ID="btnAddBook" runat="server" Text="Add Book" OnClick="btnAddBook_Click" />
 		</div>
 	</div>
 </asp:Content>

@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="col-md-3">
-			Birthdate (YYYY-MM-DD):
+			Birthdate:
 		</div>
 		<div class="col-md-9">
 			<asp:TextBox ID="txtBirthdate" runat="server" CssClass="form-control"></asp:TextBox>
